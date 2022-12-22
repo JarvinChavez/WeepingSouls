@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Menu.gd" type="Script" id=1]
-[ext_resource path="res://pixel_font100.tres" type="DynamicFont" id=2]
-[ext_resource path="res://VT323-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/pixel_font100.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/VT323-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
