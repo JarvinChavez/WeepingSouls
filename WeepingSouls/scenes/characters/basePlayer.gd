@@ -7,7 +7,6 @@ const FRICTION = 500
 var velocity = Vector2.ZERO
 
 
-
 func _physics_process(delta): # basic wasd movement. diagonal movement is faster
 	
 	var input_vector = Vector2.ZERO
