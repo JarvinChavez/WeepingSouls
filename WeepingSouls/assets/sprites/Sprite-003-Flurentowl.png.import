@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Sprite-003-Flurentowl.png-df05a6e2ca044de149e8a8d6275188d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://assets/sprites/Sprite-003-Flurentowl.png"
+dest_files=[ "res://.import/Sprite-003-Flurentowl.png-df05a6e2ca044de149e8a8d6275188d3.stex" ]
 
 [params]
 
