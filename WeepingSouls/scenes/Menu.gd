@@ -11,7 +11,7 @@ func _ready():
 	$VBoxContainer/NewGameButton.grab_focus()
 
 func _on_NewGameButton_pressed():
-	get_tree().change_scene("res://scenes/areas/firstArea.tscn")
+	get_tree().change_scene("res://scenes/areas/baseArea.tscn") # replace this with firstScene once its done.
 
 
 func _on_LoadGameButton_pressed():
