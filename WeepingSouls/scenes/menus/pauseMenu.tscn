@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/pixel_font100.tres" type="DynamicFont" id=1]
-[ext_resource path="res://scenes/menu/pauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menus/pauseMenu.gd" type="Script" id=2]
 
 [node name="pauseMenu" type="Control"]
 pause_mode = 2
@@ -13,10 +13,22 @@ script = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.603922, 0.403922, 0.403922, 0.733333 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="background"]
+anchor_left = -0.021
+anchor_top = -0.003
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.997
+margin_left = 24.504
+margin_top = 7.8
+margin_right = 3.0
+margin_bottom = 7.79999
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="background/CenterContainer"]
 margin_left = 286.0

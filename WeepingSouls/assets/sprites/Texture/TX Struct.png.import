@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toTestMovement.jpg-6458b78070b5d87f1a0b07ad038088b2.stex"
+path="res://.import/TX Struct.png-5500d8d1be64245892c6263279898022.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/toTestMovement.jpg"
-dest_files=[ "res://.import/toTestMovement.jpg-6458b78070b5d87f1a0b07ad038088b2.stex" ]
+source_file="res://assets/sprites/Texture/TX Struct.png"
+dest_files=[ "res://.import/TX Struct.png-5500d8d1be64245892c6263279898022.stex" ]
 
 [params]
 
