@@ -1,16 +1,41 @@
 extends Resource
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+class_name MoveStat
 
+enum Statuses {
+	None, 
+	burn1,
+	burn2,
+	poisoned,
+	stunned,
+	bleeding,
+	blighted,
+	insanity,
+	headache,
+	frostbite
+}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+enum Type {
+	None,
+	chaotic,
+	phantom,
+	heat,
+	water,
+	combat,
+	terra,
+	corrosive,
+	metallic,
+	normal,
+	ice,
+	electric,
+	esper, 
+	air
+}
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+export(String) var name
+export(int) var power = 1
+export(int) var accuracy = 1
+export(Type) var type
+export(Statuses) var statuses
+export(PackedScene) var Texture
