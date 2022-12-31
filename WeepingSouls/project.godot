@@ -9,20 +9,66 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "CharBattleTexture",
+"language": "GDScript",
+"path": "res://temp_texture_pos.gd"
+}, {
+"base": "Control",
+"class": "Menu",
+"language": "GDScript",
+"path": "res://Battle System/battle_storage/Menu_func.gd"
+}, {
+"base": "Resource",
+"class": "MoveStats",
+"language": "GDScript",
+"path": "res://BattleSystem_Scripts/MoveStatistics.gd"
+}, {
+"base": "Node",
+"class": "NPCMechanics",
+"language": "GDScript",
+"path": "res://Npcs/NpcMechanics.gd"
+}, {
+"base": "Resource",
+"class": "N_PCStats",
+"language": "GDScript",
+"path": "res://Npcs/N_pcStats.gd"
+}, {
 "base": "Resource",
 "class": "SRstats",
 "language": "GDScript",
-"path": "res://scripts/SRstats.gd"
+"path": "res://BattleSystem_Scripts/SRstats.gd"
+}, {
+"base": "Resource",
+"class": "TextModel",
+"language": "GDScript",
+"path": "res://Npcs/Char_Dia.gd"
+}, {
+"base": "Tween",
+"class": "Tweenkies",
+"language": "GDScript",
+"path": "res://Npcs/Tween.gd"
 } ]
 _global_script_class_icons={
-"SRstats": ""
+"CharBattleTexture": "",
+"Menu": "",
+"MoveStats": "",
+"NPCMechanics": "",
+"N_PCStats": "",
+"SRstats": "",
+"TextModel": "",
+"Tweenkies": ""
 }
 
 [application]
 
 config/name="WeepingSouls"
-run/main_scene="res://scenes/Menu.tscn"
+run/main_scene="res://Battle System/scenes/Menu.tscn"
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout=""
 
 [gui]
 

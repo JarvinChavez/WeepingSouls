@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://BattleSystem_Scripts/MoveStatistics.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Saturn's winds"
+power = 120
+accuracy = 80
+type = 13
+statuses = 0
+movetype = 0
+Surge = 1
