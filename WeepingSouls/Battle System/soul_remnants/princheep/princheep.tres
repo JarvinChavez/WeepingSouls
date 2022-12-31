@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://BattleSystem_Scripts/SRstats.gd" type="Script" id=1]
+[ext_resource path="res://Battle System/soul_remnants/1_Moves/Air/Saturn's winds.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = ""
+level = 20
+exp_stat = 1
+xp = 1
+hp = 30
+max_hp = 35
+attack = 10
+durability = 10
+range_attack = 20
+resistance = 12
+speed = 12
+wild = false
+EquippedMoves = [ ExtResource( 2 ) ]
+Moveset = {
+}

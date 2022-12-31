@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://BattleSystem_Scripts/MoveStatistics.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Name = "Wind Gust"
+power = 60
+accuracy = 90
+type = 13
+statuses = 0

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://BattleSystem_Scripts/SRstats.gd" type="Script" id=1]
+[ext_resource path="res://Battle System/soul_remnants/Eye-eye-frog/Eye-Eye-frog-texture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Battle System/soul_remnants/1_Moves/Combat/Desperate Bite.tres" type="Resource" id=3]
+[ext_resource path="res://Battle System/soul_remnants/1_Moves/Air/Saturn's winds.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Eye-Eye-Frog"
+type = 0
+type2 = 0
+level = 5
+exp_stat = 20
+xp = 1
+hp = 16
+max_hp = 16
+attack = 20
+durability = 24
+range_attack = 30
+resistance = 16
+speed = 20
+wild = false
+EquippedMoves = [ ExtResource( 3 ) ]
+Moveset = {
+10: ExtResource( 4 )
+}
+Texture = ExtResource( 2 )
