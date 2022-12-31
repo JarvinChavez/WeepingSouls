@@ -15,6 +15,7 @@ onready var SoulRemnants_ = find_node("Sr_in_battle")
 onready var Options_menu = find_node("Options_Menu")
 onready var Player_Textures_ = find_node("Player")
 onready var Enemy_Textures_ = find_node("Enemy")
+var type_func= load("res://Battle System/soul_remnants/Types_func.gd").new()
 
 var menu_stack_ := []
 
@@ -115,7 +116,7 @@ func _on_Options_activated(Options_idx:int) -> void:
 		emit_signal("action_choosen", Action.new(Action.Type.cancel, 0))
 
 #######################################################################################################################################
-func damage_after_types(onOffense, onDefense, move: MoveStats, type:SRstats):
+func damage_(onOffense, onDefense, move:MoveStats) -> float:
 	var raw_dam = 0
 	if onOffense.movetype == 0:
 		var movedp = ((move.power * 0.1) * (onOffense.attack * 0.1))
@@ -127,87 +128,8 @@ func damage_after_types(onOffense, onDefense, move: MoveStats, type:SRstats):
 		var pre_roll = (movedp - (onDefense.resistance * 0.4)) - 10
 		var HL_Rolls = (randf() * 10) + pre_roll
 		raw_dam += HL_Rolls
-		
-	var TMC_dam = 0
-	var Neutral_dam = 1
-	var NVE_dam = 0.5
-	var VE_dam = 2
-	var Move_type = move.type
-	var onDefense_type = type.type
-	var onDefense_type2 = type.type1
-	if Move_type == 0:
-		pass
-	elif Move_type == 1: #chaotic Attacking
-		if onDefense_type == 1: #chaotic
-			if onDefense_type2  == 0: #chaotic
-				TMC_dam = raw_dam * (0.5)
-			if onDefense_type2  == 1: #chaotic
-				pass
-			elif onDefense_type2 == 2:  #Chaotic/Phantom
-				type
-			elif onDefense_type2  == 3: #Heat
-				pass
-			elif onDefense_type2  == 4: #Water
-				pass
-			elif onDefense_type2 == 5: #Combat
-				pass
-			elif onDefense_type2  == 6: #Terra
-				pass
-			elif onDefense_type2  == 7: #Corrosive
-				pass
-			elif onDefense_type2  == 8: #Metallic
-				pass
-			elif onDefense_type2 == 9: #Ice
-				pass
-			elif onDefense_type2  == 10: #Electric
-				pass
-			elif onDefense_type2  == 11: #Esper
-				pass
-			elif onDefense_type2  == 12: #Air
-				pass
-		elif onDefense_type == 2: #Phantom
-			pass
-		elif onDefense_type == 3: #Heat
-			pass
-		elif onDefense_type == 4: #Water
-			pass
-		elif onDefense_type == 5: #Combat
-			pass
-		elif onDefense_type == 6: #Terra
-			pass
-		elif onDefense_type == 7: #Corrosive
-			pass
-		elif onDefense_type == 8: #Metallic
-			pass
-		elif onDefense_type == 9: #Ice
-			pass
-		elif onDefense_type == 10: #Electric
-			pass
-		elif onDefense_type == 11: #Esper
-			pass
-		elif onDefense_type == 12: #Air
-			pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass
-	elif Move_type == 1:
-		pass	
-
+	return raw_dam
+	
 
 # turn cycle
 func get_next_player_move_():
@@ -300,10 +222,10 @@ func apply_attack_(onOffense:SRstats, onDefense:SRstats, Attacking_Textures:Node
 		yield(fx.play(), "done")
 		fx.queue_free()
 
-	var Damage = damage_(onOffense, onDefense, move)
+	var Raw_Damage = damage_(onOffense, onDefense, move)
 	var critical = 1.5 if randf() > 0.9 else 1.0
 	
-	onDefense.hp -= Damage * critical
+	onDefense.hp -= Raw_Damage * critical
 	yield(Defending_Textures.find_node("SR_stats").animate_hp(onDefense.hp), "animate_hp_done")
 
 	if critical >= 1.5:
