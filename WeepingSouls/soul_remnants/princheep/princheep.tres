@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource( 1 )
-Level = 1902
+Level = 0
 EXP = 0
 Health = 0
-Attack = 1
-Durability = 913708216
+Attack = 0
+Durability = 0
 Range_attack = 0
 Resistances = 0
 Speed = 0
-type1 = 9
+type1 = 0
 type2 = 0
