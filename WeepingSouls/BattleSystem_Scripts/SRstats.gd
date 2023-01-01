@@ -10,20 +10,19 @@ signal max_hp_changed
 signal xp_changed
 
 enum Type1 {
-	None,
-	chaotic,
-	phantom,
 	heat,
 	water,
+	symbiotic,
+	ice,
 	combat,
 	terra,
-	corrosive,
+	esper,
+	phantom,
 	metallic,
-	normal,
-	ice,
-	electric,
-	esper, 
+	corrosive,
+	chaotic,
 	air,
+	none,
 }
 
 
