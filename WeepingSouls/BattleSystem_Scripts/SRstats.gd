@@ -22,7 +22,7 @@ enum Type1 {
 	corrosive,
 	chaotic,
 	air,
-	none,
+	None,
 }
 
 
