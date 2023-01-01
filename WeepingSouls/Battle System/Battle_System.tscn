@@ -19,9 +19,7 @@
 
 [sub_resource type="Theme" id=1]
 
-[node name="In Battle" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="In Battle" type="Node"]
 
 [node name="Batttle" type="TextureRect" parent="."]
 margin_left = 3.05176e-05
@@ -90,7 +88,7 @@ margin_left = 6.99999
 margin_top = 6.55157
 margin_right = 21.0
 margin_bottom = 20.5516
-script = ExtResource( 16 )
+script = ExtResource( 14 )
 menu_items = [ NodePath("Grid/M/container/xContainer/Attack_Button"), NodePath("Grid/M/container/xContainer2/Swap_Button"), NodePath("Grid/M/container/xContainer3/Player_Guard"), NodePath("Grid/M/container/xContainer4/Inventory_Button"), NodePath("Grid/M/container/xContainer5/Escape_Button") ]
 
 [node name="Grid" type="GridContainer" parent="Batttle/Battle_Buttons"]
@@ -157,7 +155,7 @@ margin_left = -1.43275e-05
 margin_top = -0.44843
 margin_right = 14.0
 margin_bottom = 13.5516
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 
 [node name="Grid" type="GridContainer" parent="Batttle/Inventory"]
 margin_left = 7.0
@@ -173,7 +171,7 @@ margin_bottom = 7.0
 visible = false
 margin_right = 14.0
 margin_bottom = 14.0
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 
 [node name="Grid" type="GridContainer" parent="Batttle/Attacks_menu"]
 margin_left = 7.0
@@ -189,7 +187,7 @@ margin_bottom = 7.0
 visible = false
 margin_right = 14.0
 margin_bottom = 14.0
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 menu_items = [ NodePath("Grid/M/container/yes"), NodePath("Grid/M/container/no") ]
 
 [node name="Grid" type="GridContainer" parent="Batttle/Options_Menu"]
