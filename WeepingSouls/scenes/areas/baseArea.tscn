@@ -1,10 +1,8 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/characters/basePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/Texture/TX Tileset Grass.png" type="Texture" id=2]
 [ext_resource path="res://scenes/menus/pauseMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Battle System/soul_remnants/Eye-eye-frog/Sprite-eye-eye-frog-sheet-(back).png" type="Texture" id=4]
-[ext_resource path="res://Battle System/soul_remnants/Eye-eye-frog/Sprite-eye-eye-frog-sheet.png" type="Texture" id=5]
 [ext_resource path="res://Npcs/Dialogue_Box.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
@@ -149,134 +147,9 @@
 9/shapes = [  ]
 9/z_index = 0
 
-[sub_resource type="AnimatedTexture" id=2]
-frames = 9
-frame_1/delay_sec = 0.0
-frame_2/delay_sec = 0.0
-frame_3/delay_sec = 0.0
-frame_4/delay_sec = 0.0
-frame_5/delay_sec = 0.0
-frame_6/delay_sec = 0.0
-frame_7/delay_sec = 0.0
-frame_8/delay_sec = 0.0
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 200, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 400, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 600, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 800, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1000, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1200, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1400, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1600, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1800, 0, 200, 200 )
-
-[sub_resource type="SpriteFrames" id=13]
-animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 200, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 400, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 600, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 800, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1000, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1200, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1400, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1600, 0, 200, 200 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 1800, 0, 200, 200 )
-
-[sub_resource type="SpriteFrames" id=24]
-animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="baseArea" type="Node2D"]
+
+[node name="LocaleThemeMusic" type="AudioStreamPlayer" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -290,31 +163,11 @@ tile_data = PoolIntArray( -589841, 0, 0, -589840, 0, 0, -589839, 0, 0, -589838, 
 [node name="pauseMenu" parent="." instance=ExtResource( 3 )]
 visible = false
 
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( -374, -1 )
-rotation = -0.00398224
-scale = Vector2( 1.18845, 1.26151 )
-texture = ExtResource( 4 )
-normal_map = SubResource( 2 )
-centered = false
-hframes = 9
-
-[node name="Eye-eye-frog" type="AnimatedSprite" parent="Sprite"]
-position = Vector2( 95.8819, 9.87218 )
-frames = SubResource( 13 )
-frame = 7
-playing = true
-centered = false
-
-[node name="Eye-eye-frog(back)" type="AnimatedSprite" parent="Sprite"]
-frames = SubResource( 24 )
-frame = 9
-playing = true
-
 [node name="Dialogue" parent="." instance=ExtResource( 9 )]
 visible = false
 margin_left = 44.0
 margin_top = -14.0
 margin_right = 735.0
 margin_bottom = 418.0
+
+[node name="NPCinLocale" type="YSort" parent="."]
