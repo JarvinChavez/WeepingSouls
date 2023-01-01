@@ -1,12 +1,6 @@
 extends Node
 func damage_after_types(Raw_Damage, attackMoveType: MoveStats, defenseType1: SRstats, defenseType2: SRstats) -> int:
-<<<<<<< HEAD
 
-=======
-	var Move_type = attackMoveType.type # attack
-	var onDefense_type1 = defenseType1.type # defense
-	var onDefense_type2 = defenseType2.type2
->>>>>>> 158e01b511740cc961fa13bda7451a2864f3712a
 	var TMC_dam = 0
 	
 					# defend:
@@ -40,13 +34,9 @@ func damage_after_types(Raw_Damage, attackMoveType: MoveStats, defenseType1: SRs
 						
 	TMC_dam = Raw_Damage * type_advantages[attackMoveType][defenseType1] # first check
 	
-<<<<<<< HEAD
 	if defenseType2 != SRstats.none:
 		TMC_dam = TMC_dam * type_advantages[attackMoveType][defenseType2] # second check if the defending pokemon has 2 types
-=======
-	if defenseType2.type2 != SRstats.None:
-		TMC_dam = TMC_dam * type_advantages[Move_type][onDefense_type2] # second check if the defending pokemon has 2 types
->>>>>>> 158e01b511740cc961fa13bda7451a2864f3712a
+
 	
 	return TMC_dam
 	
