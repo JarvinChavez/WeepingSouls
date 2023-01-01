@@ -16,6 +16,7 @@ enum Statuses {
 }
 
 enum Type1 {
+	None,
 	heat,
 	water,
 	symbiotic,
@@ -28,7 +29,6 @@ enum Type1 {
 	corrosive,
 	chaotic,
 	air,
-	none,
 }
 
 enum MoveType {
