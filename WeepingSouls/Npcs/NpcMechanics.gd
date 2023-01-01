@@ -1,19 +1,18 @@
 extends Node
-
 class_name NPCMechanics
 
 signal done
 
-var info_box
-var 
+var Dialogue
+var player
 var tween
-var level
+var locale
 
 func _ready() -> void:
-	level = find_parent("level")
-	info_box = level.get_node("info_box")
-	tween = level.get_node("tween")
-	 = level.find_node("")
+	locale = find_parent("locale")
+	Dialogue = locale.get_node("Dialogue")
+	tween = locale.get_node("tween")
+	player = locale.find_node("player")
 
 	for node in get_children():
 		if node is Trigger:
@@ -25,8 +24,8 @@ func _on_trigger() -> void:
 func floor_vec2(vector:Vector2) -> Vector2:
 	return Vector2(floor(vector.x / 16.0) * 16.0, floor(vector.y / 16.0) * 16.0)
 
-func get_() -> Node:
-	return find_parent("level").find_node("")
+func get_player() -> Node:
+	return find_parent("locale").find_node("player")
 
 func done_() -> void:
 	emit_signal("done")

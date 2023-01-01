@@ -10,8 +10,10 @@
 [sub_resource type="AudioStreamSample" id=2]
 
 [node name="Dialogue" type="PanelContainer"]
-margin_right = 691.0
-margin_bottom = 432.0
+margin_left = 3.0
+margin_top = 525.0
+margin_right = 694.0
+margin_bottom = 600.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource( 1 )
@@ -22,7 +24,7 @@ script = ExtResource( 3 )
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 684.0
-margin_bottom = 425.0
+margin_bottom = 68.0
 texture = ExtResource( 2 )
 
 [node name="NEXT_arrow" type="TextureRect" parent="Dialogue_Box_texture"]

@@ -16,20 +16,19 @@ enum Statuses {
 }
 
 enum Type1 {
-	None,
-	chaotic,
-	phantom,
-	heat,
-	water,
-	combat,
-	terra,
-	corrosive,
-	metallic,
-	normal,
-	ice,
-	electric,
-	esper, 
-	air,
+	None,     #0
+	chaotic,  #1
+	phantom,  #2
+	heat,     #3
+	water,    #4
+	combat,   #5
+	terra,    #6
+	corrosive,#7
+	metallic, #8
+	ice,      #9
+	electric, #10
+	esper,    #11
+	air,      #12
 }
 
 enum MoveType {
