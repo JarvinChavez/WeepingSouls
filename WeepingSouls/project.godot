@@ -63,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="WeepingSouls"
-run/main_scene="res://Battle System/scenes/Menu.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [audio]
