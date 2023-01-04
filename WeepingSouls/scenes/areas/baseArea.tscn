@@ -188,7 +188,7 @@ offset = 0.000427246
 [node name="NPC" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
 scale = Vector2( 0.05, 0.05 )
 active = true
-Trigger_chance = 1.0
+Trigger_chance = 0.1
 walk_method = "loop"
 
 [node name="noticed" type="Sprite" parent="Path2D/PathFollow2D/NPC"]

@@ -1,10 +1,10 @@
 extends Node2D
 
-var tween_:TweenEx
+var tween_:Tweenkies
 var tween__:Tween
 
 func _ready()-> void:
-	tween_ = TweenEx.new()
+	tween_ = Tweenkies.new()
 	tween__ = Tween.new()
 	add_child(tween_)
 	add_child(tween__)

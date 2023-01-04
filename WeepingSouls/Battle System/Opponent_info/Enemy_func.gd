@@ -69,8 +69,7 @@ func _on_NPC_body_entered(_body_rid, body: Node, _body_shape_index, _local_shape
 			if active:
 				$noticed.visible = in_sight
 				Player.control_lock = true
-				var inbattle = preload("res://Battle System/NPcvsBattle.tscn").instance()
-				$"../../../BattleStart".add_child(inbattle)
+				_battle_start()
 		else:
 			return
 
@@ -79,3 +78,7 @@ func  _on_NPC_body_exited(_body_rid, body: Node, _body_shape_index, _local_shape
 		in_sight = false
 		state = "patrol"
 		$noticed.visible = in_sight
+		
+func _battle_start():
+	var inbattle = preload("res://Battle System/NPcvsBattle.tscn").instance()
+	$"../../../BattleStart".add_child(inbattle)
