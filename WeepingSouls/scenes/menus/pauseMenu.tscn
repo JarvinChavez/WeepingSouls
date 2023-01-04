@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/pixel_font100.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/menus/pauseMenu.gd" type="Script" id=2]
+
+[node name="pauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.603922, 0.403922, 0.403922, 0.733333 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="background"]
+anchor_left = -0.021
+anchor_top = -0.003
+anchor_right = 1.0
+anchor_bottom = 0.997
+margin_left = 24.504
+margin_top = 7.8
+margin_right = 3.0
+margin_bottom = 7.79999
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background/CenterContainer"]
+margin_left = 286.0
+margin_top = 82.0
+margin_right = 738.0
+margin_bottom = 517.0
+custom_constants/separation = 10
+
+[node name="pausedLabel" type="Label" parent="background/CenterContainer/VBoxContainer"]
+margin_right = 452.0
+margin_bottom = 203.0
+custom_fonts/font = ExtResource( 1 )
+text = "Paused
+"
+align = 1
+valign = 1
+
+[node name="resumeButton" type="Button" parent="background/CenterContainer/VBoxContainer"]
+margin_top = 213.0
+margin_right = 452.0
+margin_bottom = 319.0
+custom_fonts/font = ExtResource( 1 )
+text = "resume game"
+
+[node name="quitButton" type="Button" parent="background/CenterContainer/VBoxContainer"]
+margin_top = 329.0
+margin_right = 452.0
+margin_bottom = 435.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="background/CenterContainer/VBoxContainer/resumeButton" to="." method="_on_resumeButton_pressed"]
+[connection signal="pressed" from="background/CenterContainer/VBoxContainer/quitButton" to="." method="_on_quitButton_pressed"]
