@@ -1,0 +1,186 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/pixel_font100.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/menus/pauseMenu/pauseScreen.gd" type="Script" id=2]
+[ext_resource path="res://scenes/menus/pauseMenu/pauseUI.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menus/pauseMenu/exitSprite.png" type="Texture" id=4]
+[ext_resource path="res://scenes/menus/pauseMenu/inventorySprite.png" type="Texture" id=5]
+[ext_resource path="res://scenes/menus/pauseMenu/playerInfoSprite.png" type="Texture" id=6]
+[ext_resource path="res://scenes/menus/pauseMenu/creaturesSprite.png" type="Texture" id=7]
+[ext_resource path="res://scenes/menus/pauseMenu/archivesSprite.png" type="Texture" id=8]
+[ext_resource path="res://scenes/menus/pauseMenu/optionsSprite.png" type="Texture" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.027451, 0.027451, 0 )
+
+[node name="pauseScreen" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 2 )
+
+[node name="overlay" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="PauseCenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_stretch_ratio = 2.0
+
+[node name="PauseUi" type="Sprite" parent="PauseCenterContainer"]
+position = Vector2( 512, 300 )
+texture = ExtResource( 3 )
+
+[node name="inventoryPolygon" type="Polygon2D" parent="PauseCenterContainer"]
+polygon = PoolVector2Array( 514, 172, 641, 0, 201, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="PauseCenterContainer/inventoryPolygon"]
+margin_left = 201.0
+margin_right = 641.0
+margin_bottom = 172.0
+texture_normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="PauseCenterContainer/inventoryPolygon"]
+margin_left = 360.0
+margin_top = -23.0
+margin_right = 720.0
+margin_bottom = 180.0
+rect_rotation = 29.0
+rect_scale = Vector2( 0.65, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Remnants
+"
+
+[node name="inventoryPolygon2" type="Polygon2D" parent="PauseCenterContainer"]
+color = Color( 0.517647, 0.494118, 0.529412, 1 )
+polygon = PoolVector2Array( 526, 179, 658, 0, 1024, 0, 1024, 44, 831, 345 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="PauseCenterContainer/inventoryPolygon2"]
+margin_left = 526.0
+margin_right = 1035.0
+margin_bottom = 346.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="PauseCenterContainer/inventoryPolygon2"]
+margin_left = 621.0
+margin_top = 118.0
+margin_right = 981.0
+margin_bottom = 321.0
+rect_rotation = 28.5
+rect_scale = Vector2( 0.65, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Inventory
+"
+
+[node name="playerInfoPolygon" type="Polygon2D" parent="PauseCenterContainer"]
+color = Color( 0.796078, 0.858824, 0.988235, 1 )
+polygon = PoolVector2Array( 1024, 452, 841, 352, 1024, 68 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="PauseCenterContainer/playerInfoPolygon"]
+margin_left = 842.0
+margin_top = 69.0
+margin_right = 1024.0
+margin_bottom = 452.0
+texture_normal = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="PauseCenterContainer/playerInfoPolygon"]
+margin_left = 905.0
+margin_top = 273.0
+margin_right = 1086.0
+margin_bottom = 373.0
+rect_rotation = 28.6
+rect_scale = Vector2( 0.65, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Info"
+
+[node name="optionsPolygon" type="Polygon2D" parent="PauseCenterContainer"]
+position = Vector2( 0, 1 )
+color = Color( 0.933333, 0.764706, 0.603922, 1 )
+polygon = PoolVector2Array( 207, 237, 0, 472, 0, 108 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="PauseCenterContainer/optionsPolygon"]
+margin_left = 1.0
+margin_top = 109.0
+margin_right = 209.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="PauseCenterContainer/optionsPolygon"]
+margin_left = 45.0
+margin_top = 117.0
+margin_right = 405.0
+margin_bottom = 320.0
+rect_rotation = 32.0
+rect_scale = Vector2( 0.67, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Options
+"
+
+[node name="savePolygon" type="Polygon2D" parent="PauseCenterContainer"]
+color = Color( 0.85098, 0.627451, 0.4, 1 )
+polygon = PoolVector2Array( 217, 242, 0, 488, 0, 600, 310, 600, 464, 394 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="PauseCenterContainer/savePolygon"]
+margin_top = 243.0
+margin_right = 463.0
+margin_bottom = 600.0
+texture_normal = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="PauseCenterContainer/savePolygon"]
+margin_left = 277.0
+margin_top = 261.0
+margin_right = 637.0
+margin_bottom = 670.0
+rect_rotation = 31.5
+rect_scale = Vector2( 0.69, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Save
+
+
+"
+
+[node name="exitPolygon" type="Polygon2D" parent="PauseCenterContainer"]
+color = Color( 0.933333, 0.764706, 0.603922, 1 )
+polygon = PoolVector2Array( 324, 600, 474, 399, 801, 600 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="PauseCenterContainer/exitPolygon"]
+margin_left = 325.0
+margin_top = 399.0
+margin_right = 800.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="PauseCenterContainer/exitPolygon"]
+margin_left = 500.0
+margin_top = 397.0
+margin_right = 860.0
+margin_bottom = 806.0
+rect_rotation = 31.5
+rect_scale = Vector2( 0.69, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Exit
+
+
+"
