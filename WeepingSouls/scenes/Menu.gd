@@ -15,8 +15,7 @@ func _on_NewGameButton_pressed():
 
 "res://Battle System/scenes/Menu.gd"
 func _on_LoadGameButton_pressed():
-	pass # Replace with function body.
-
+	get_tree().change_scene("res://scenes/menus/Save files.tscn")
 
 func _on_OptionsButton_pressed():
 	pass # Replace with function body.
