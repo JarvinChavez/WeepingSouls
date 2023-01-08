@@ -69,10 +69,25 @@ func scroll() -> void:
 	scroll_tween.start()
 
 
-func _on_Save_files_gui_input(event):
+func _on_Save_files_gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			scroll_tween.stop_all()
 		else:
 			scroll()
 
+
+func _on_Save1_button_pressed():
+	print('ok')
+
+func _on_Save2_button_pressed():
+	print('ok2')
+
+func _on_Save3_button_pressed():
+	print('ok3')
+
+func _on_Save4_button_pressed():
+	print('ok4')
+
+func _on_Save5_button_pressed():
+	print('ok5')
