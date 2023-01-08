@@ -1,0 +1,28 @@
+extends Control
+
+
+var is_paused = false setget set_is_paused
+
+func _unhandled_input(event):
+	if event.is_action_pressed("pause"): # esc key
+		self.is_paused = !is_paused
+
+func set_is_paused(value):
+	is_paused = value
+	get_tree().paused = is_paused
+	visible = is_paused
+
+
+
+func _on_resumeButton_pressed():
+	self.is_paused = false
+
+
+func _on_optionsButtons_pressed():
+	print("create options menu later")
+
+func _on_quitButton_pressed():
+	get_tree().quit()
+
+
+
