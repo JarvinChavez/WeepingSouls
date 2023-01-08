@@ -64,6 +64,7 @@ _global_script_class_icons={
 
 config/name="WeepingSouls"
 run/main_scene="res://scenes/Menu.tscn"
+config/icon="res://icon.png"
 
 [audio]
 
