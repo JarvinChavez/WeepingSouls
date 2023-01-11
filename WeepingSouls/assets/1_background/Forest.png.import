@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Forest.png-74879d7cd42583a314d805dad6fff4f2.stex"
+path="res://.import/Forest.png-c29d097f04644f63cecd3d2e4511be44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Battle System/soul_remnants/1_background/Forest.png"
-dest_files=[ "res://.import/Forest.png-74879d7cd42583a314d805dad6fff4f2.stex" ]
+source_file="res://assets/1_background/Forest.png"
+dest_files=[ "res://.import/Forest.png-c29d097f04644f63cecd3d2e4511be44.stex" ]
 
 [params]
 

@@ -31,6 +31,33 @@ enum Type1 {
 	None,
 }
 
+enum De_buff {
+	attack_down,
+	attack_up,
+	durability_down,
+	durability_up,
+	special_down,
+	special_up,
+	resistance_down,
+	resistance_up,
+	speed_down,
+	speed_up,
+	ability_negated,
+	damage_chunk,
+	item_negation,
+	debuff_removal,
+	debuff_bounce,
+	self_healing,
+	anti_healing,
+	status_removal,
+	Overwelming_fear,
+	Overwhelming_rage,
+	overwhelming_doubt,
+	overwhelming_loneliness,
+	overwhelming_guilt,
+	
+}
+
 enum MoveType {
 	attack,
 	Special

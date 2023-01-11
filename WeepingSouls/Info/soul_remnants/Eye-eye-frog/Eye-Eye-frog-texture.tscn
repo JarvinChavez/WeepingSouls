@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Battle System/soul_remnants/Eye-eye-frog/Eye-Eye-frog-texture.gd" type="Script" id=1]
-[ext_resource path="res://Battle System/soul_remnants/Eye-eye-frog/Sprite-eye-eye-frog-sheet-(back).png" type="Texture" id=2]
-[ext_resource path="res://Battle System/soul_remnants/Eye-eye-frog/Sprite-eye-eye-frog-sheet.png" type="Texture" id=3]
+[ext_resource path="res://Info/soul_remnants/Eye-eye-frog/Eye-Eye-frog-texture.gd" type="Script" id=1]
+[ext_resource path="res://Info/soul_remnants/Eye-eye-frog/Sprite-eye-eye-frog-sheet-(back).png" type="Texture" id=2]
+[ext_resource path="res://Info/soul_remnants/Eye-eye-frog/Sprite-eye-eye-frog-sheet.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -121,11 +121,12 @@ animations = [ {
 } ]
 
 [node name="Eye-eye-frog" type="Node2D"]
+scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
 
 [node name="Eye-eye-frog(front)" type="AnimatedSprite" parent="."]
 frames = SubResource( 11 )
-frame = 8
+frame = 9
 playing = true
 
 [node name="Eye-eye-frog(back)" type="AnimatedSprite" parent="."]
@@ -133,5 +134,5 @@ visible = false
 position = Vector2( 120, 0 )
 scale = Vector2( 1.15, 1.15 )
 frames = SubResource( 22 )
-frame = 5
+frame = 6
 playing = true

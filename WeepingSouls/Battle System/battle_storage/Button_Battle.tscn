@@ -3,18 +3,19 @@
 [ext_resource path="res://Battle System/battle_storage/Button_func.gd" type="Script" id=1]
 
 [node name="Button_Battle" type="HBoxContainer"]
-margin_right = 200.0
-margin_bottom = 50.0
+margin_right = 600.0
+margin_bottom = 100.0
 script = ExtResource( 1 )
-text = "False"
+text = "Button"
 
 [node name="pointer" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_bottom = 50.0
+margin_bottom = 100.0
+expand = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 4.0
-margin_top = 18.0
-margin_right = 37.0
-margin_bottom = 32.0
-text = "False"
+margin_top = 43.0
+margin_right = 47.0
+margin_bottom = 57.0
+text = "Button"

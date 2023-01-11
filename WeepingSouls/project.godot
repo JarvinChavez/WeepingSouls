@@ -27,27 +27,27 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "NPCMechanics",
 "language": "GDScript",
-"path": "res://Npcs/NpcMechanics.gd"
+"path": "res://Info/Npcs/NpcMechanics.gd"
 }, {
 "base": "Resource",
 "class": "N_PCStats",
 "language": "GDScript",
-"path": "res://Npcs/N_pcStats.gd"
+"path": "res://Info/Npcs/N_pcStats.gd"
 }, {
 "base": "Resource",
 "class": "SRstats",
 "language": "GDScript",
-"path": "res://BattleSystem_Scripts/SRstats.gd"
+"path": "res://Info/soul_remnants/SRstats.gd"
 }, {
 "base": "Resource",
 "class": "TextModel",
 "language": "GDScript",
-"path": "res://Npcs/Char_Dia.gd"
+"path": "res://Info/Npcs/Char_Dia.gd"
 }, {
 "base": "Tween",
 "class": "Tweenkies",
 "language": "GDScript",
-"path": "res://Npcs/Tween.gd"
+"path": "res://Info/Npcs/Tween.gd"
 } ]
 _global_script_class_icons={
 "CharBattleTexture": "",
@@ -78,7 +78,7 @@ window/size/test_width=920
 window/size/test_height=540
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
-window/stretch/shrink=0.72
+window/stretch/shrink=1.23
 
 [gui]
 
@@ -122,6 +122,11 @@ pause={
 esc={
 "deadzone": 0.5,
 "events": [  ]
+}
+Utility_Menu={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
 }
 
 [input_devices]

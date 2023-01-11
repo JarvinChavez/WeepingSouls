@@ -26,13 +26,16 @@ enum Type1 {
 }
 
 
-
+#funcs
 export(String) var name:String setget set_name
 export(Type1) var type
 export(Type1) var type2
 export(int) var level:int  setget set_level, get_level
 export(int) var exp_stat:int = 1
 export(int) var xp:int = 1 setget set_xp
+
+
+#stats
 export(int) var hp:int setget set_hp
 export(int) var max_hp:int setget set_max_hp
 export(int) var attack:int = 1
@@ -40,10 +43,16 @@ export(int) var durability:int = 1
 export(int) var range_attack:int = 1
 export(int) var resistance:int = 1
 export(int) var speed:int = 1
+
+#about 
 export(bool) var wild:int
 export(Array, Resource) var EquippedMoves
 export(Dictionary) var Moveset
 export(PackedScene) var Texture
+export(Dictionary) var abilities 
+
+
+
 
 func prop_change_(property:String, from, to) -> void:
 	emit_signal(property + "_changed", from, to)
@@ -56,7 +65,7 @@ func set_name(value:String) -> void:
 
 
 func set_level(value) -> void:   # does nothing but looks cool
-	pass
+	level = value
 
 func set_hp(value:int) -> void:  # Leave this error, we want to keep them as ints not floats
 	var previous_hp := hp

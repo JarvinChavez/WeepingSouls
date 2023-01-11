@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0001.png-121da057d676e0d656d641504207de2b.stex"
+path="res://.import/Sprite-Princheep-sheet-(back).png-1330a34ba0682e08eebfe733f3838c6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Battle System/Sprite-0001.png"
-dest_files=[ "res://.import/Sprite-0001.png-121da057d676e0d656d641504207de2b.stex" ]
+source_file="res://Info/soul_remnants/princheep/Sprite-Princheep-sheet-(back).png"
+dest_files=[ "res://.import/Sprite-Princheep-sheet-(back).png-1330a34ba0682e08eebfe733f3838c6e.stex" ]
 
 [params]
 
