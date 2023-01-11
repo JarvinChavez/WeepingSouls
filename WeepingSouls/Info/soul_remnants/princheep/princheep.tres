@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://BattleSystem_Scripts/SRstats.gd" type="Script" id=1]
-[ext_resource path="res://Battle System/soul_remnants/1_Moves/Air/Saturn's winds.tres" type="Resource" id=2]
+[ext_resource path="res://Info/soul_remnants/SRstats.gd" type="Script" id=1]
+[ext_resource path="res://Info/1_Moves/Air/Saturn's winds.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )

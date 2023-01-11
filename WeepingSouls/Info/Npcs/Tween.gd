@@ -33,6 +33,3 @@ func _on_tween_all_completed() -> void:
 func nop(f) -> void:
 	pass
 
-
-func _on_Sr_in_battle_visibility_changed():
-	pass # Replace with function body.
