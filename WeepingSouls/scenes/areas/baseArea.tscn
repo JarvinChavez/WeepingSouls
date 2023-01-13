@@ -197,7 +197,7 @@ offset = 0.000427246
 [node name="NPC" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
 scale = Vector2( 0.05, 0.05 )
 active = true
-Trigger_chance = 0.1
+Trigger_chance = 1.0
 walk_method = "loop"
 
 [node name="noticed" type="Sprite" parent="Path2D/PathFollow2D/NPC"]
@@ -216,12 +216,17 @@ margin_bottom = 40.0
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
 
+[node name="Tween" type="Tween" parent="GUI"]
+
+[node name="Timer" type="Timer" parent="GUI"]
+wait_time = 1.5
+one_shot = true
+
 [node name="Utility_menus" type="Control" parent="GUI"]
 visible = false
-margin_left = 8.0
-margin_top = 24.0
-margin_right = 384.0
-margin_bottom = 576.0
+margin_left = -375.0
+margin_top = 10.0
+margin_bottom = 562.0
 
 [node name="Utility_background" type="PanelContainer" parent="GUI/Utility_menus"]
 anchor_right = 1.0
@@ -230,7 +235,7 @@ anchor_bottom = 1.0
 [node name="TextureRect" type="TextureRect" parent="GUI/Utility_menus/Utility_background"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 369.0
+margin_right = 368.0
 margin_bottom = 545.0
 
 [node name="Player_icon" type="PanelContainer" parent="GUI/Utility_menus"]
@@ -339,9 +344,11 @@ margin_bottom = 140.0
 text = "Close"
 
 [node name="Soul_Remnants_Menu" type="Control" parent="GUI"]
-margin_left = 32.0
-margin_right = 1536.0
-margin_bottom = 920.0
+visible = false
+margin_left = -64.0
+margin_top = 8.0
+margin_right = 1440.0
+margin_bottom = 928.0
 
 [node name="PanelContainer" type="PanelContainer" parent="GUI/Soul_Remnants_Menu"]
 anchor_right = 1.0
@@ -351,7 +358,7 @@ margin_top = 16.0
 margin_right = -704.0
 margin_bottom = -16.0
 
-[node name="Close" type="Button" parent="GUI/Soul_Remnants_Menu"]
+[node name="Return" type="Button" parent="GUI/Soul_Remnants_Menu"]
 margin_left = 688.0
 margin_top = 8.0
 margin_right = 809.0
@@ -528,7 +535,7 @@ margin_left = -8.0
 margin_right = 96.0
 margin_bottom = 24.0
 
-[node name="Close" type="Button" parent="GUI/Inventory_Menu"]
+[node name="Return" type="Button" parent="GUI/Inventory_Menu"]
 margin_left = 1464.0
 margin_top = 16.0
 margin_right = 1553.0
@@ -569,6 +576,6 @@ margin_bottom = 40.0
 [connection signal="pressed" from="GUI/Utility_menus/VBoxContainer/Soul Archieves" to="GUI" method="_on_Soul_Archieves_pressed"]
 [connection signal="pressed" from="GUI/Utility_menus/VBoxContainer/Save" to="GUI" method="_on_Save_pressed"]
 [connection signal="pressed" from="GUI/Utility_menus/VBoxContainer/Close" to="GUI" method="_on_Close_pressed"]
-[connection signal="pressed" from="GUI/Soul_Remnants_Menu/Close" to="GUI" method="_on_Close_pressed"]
-[connection signal="pressed" from="GUI/Inventory_Menu/Close" to="GUI" method="_on_Close_pressed"]
+[connection signal="pressed" from="GUI/Soul_Remnants_Menu/Return" to="GUI" method="_on_Return_pressed"]
+[connection signal="pressed" from="GUI/Inventory_Menu/Return" to="GUI" method="_on_Close_pressed"]
 [connection signal="pressed" from="GUI/Soul_Archieves_menu/Close" to="GUI" method="_on_Close_pressed"]

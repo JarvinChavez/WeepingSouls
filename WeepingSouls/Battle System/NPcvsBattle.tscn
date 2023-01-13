@@ -1,35 +1,100 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/1_background/Forest.png" type="Texture" id=1]
+[ext_resource path="res://Info/Player_info/Player_info.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Info/Player_info/Player_Textures.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/blue-square.svg.hi.png" type="Texture" id=4]
 
 [node name="NPcvsBattle" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -16.0
-margin_right = -64.0
-margin_bottom = 8.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 24.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="BSBG" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+[node name="temp_Text" type="TextureRect" parent="BSBG"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1865.0
-margin_bottom = 1097.0
+margin_right = 1945.0
+margin_bottom = 1105.0
 texture = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
+[node name="Example_sprite_Ally" type="Sprite" parent="BSBG"]
+position = Vector2( 456, 656 )
+scale = Vector2( 0.337037, 0.378583 )
+texture = ExtResource( 4 )
+
+[node name="Example_sprite_enemy" type="Sprite" parent="BSBG"]
+position = Vector2( 1080, 568 )
+scale = Vector2( 0.337037, 0.378583 )
+texture = ExtResource( 4 )
+
+[node name="_player" type="Node2D" parent="."]
+
+[node name="Soul_pos" type="Position2D" parent="_player"]
+position = Vector2( 528, 832 )
+scale = Vector2( 11.3296, 2.22636 )
+
+[node name="_player_BT" parent="_player" instance=ExtResource( 3 )]
+position = Vector2( 520, 840 )
+
+[node name="SR_battle_info" parent="_player" instance=ExtResource( 2 )]
+position = Vector2( 520, 832 )
+
+[node name="_Enemy" type="Node2D" parent="."]
+position = Vector2( 1080, 568 )
+
+[node name="Soul_pos" type="Position2D" parent="_Enemy"]
+position = Vector2( 1304, 712 )
+
+[node name="_Enemy_BT" parent="_Enemy" instance=ExtResource( 3 )]
+position = Vector2( 1288, 720 )
+
+[node name="SR_battle_info" parent="_Enemy" instance=ExtResource( 2 )]
+position = Vector2( 1304, 712 )
+
+[node name="GUIinBattle" type="Control" parent="."]
+margin_left = 328.0
+margin_top = 840.0
+margin_right = 1544.0
+margin_bottom = 1096.0
+
+[node name="Attack_panel" type="PanelContainer" parent="GUIinBattle"]
+modulate = Color( 0.560784, 0.227451, 0.227451, 1 )
+margin_left = -80.0
+margin_top = 88.0
+margin_right = 1160.0
+margin_bottom = 217.0
+
+[node name="Buttons_battle_left" type="PanelContainer" parent="GUIinBattle"]
+margin_left = -80.0
+margin_top = -56.0
+margin_right = 440.0
+margin_bottom = 73.0
+
+[node name="Buttons_battle_right" type="PanelContainer" parent="GUIinBattle"]
 anchor_left = 0.446
 anchor_top = 1.022
 anchor_right = 0.446
 anchor_bottom = 1.022
-margin_left = -834.912
-margin_top = -208.288
-margin_right = 1037.09
-margin_bottom = -24.2881
+margin_left = 97.664
+margin_top = -317.632
+margin_right = 617.664
+margin_bottom = -188.632
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Player_health" type="PanelContainer" parent="GUIinBattle"]
+margin_left = 432.0
+margin_top = -112.0
+margin_right = 648.0
+margin_bottom = 80.0
