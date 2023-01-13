@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Battle System/Opponent_info/Enemy_Textures.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/1_background/Forest.png" type="Texture" id=2]
@@ -13,10 +13,8 @@
 [ext_resource path="res://Battle System/Opponent_info/Wild_Textures.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Info/soul_remnants/Sr_in_battle.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Battle System/battle_storage/Button_Battle.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Battle System/battle_storage/Menu_func.gd" type="Script" id=14]
 [ext_resource path="res://BattleSystem_Scripts/Battle_system_func.gd" type="Script" id=15]
 [ext_resource path="res://Battle System/battle_storage/Menu_func.gd" type="Script" id=16]
-
 
 [sub_resource type="Theme" id=1]
 
@@ -51,6 +49,7 @@ script = ExtResource( 4 )
 [node name="SR_stats" parent="Batttle/Enemy" instance=ExtResource( 6 )]
 
 [node name="N_pc" parent="Batttle/Enemy" instance=ExtResource( 1 )]
+visible = false
 
 [node name="WildCreature" type="Position2D" parent="Batttle"]
 visible = false
@@ -61,7 +60,6 @@ script = ExtResource( 3 )
 [node name="SR_stats" parent="Batttle/WildCreature" instance=ExtResource( 6 )]
 
 [node name="W_textures" parent="Batttle/WildCreature" instance=ExtResource( 11 )]
-scale = Vector2( 1, 1 )
 
 [node name="Dialogue" parent="Batttle" instance=ExtResource( 5 )]
 
@@ -89,65 +87,65 @@ margin_left = 6.99999
 margin_top = 6.55157
 margin_right = 21.0
 margin_bottom = 20.5516
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 menu_items = [ NodePath("Grid/M/container/xContainer/Attack_Button"), NodePath("Grid/M/container/xContainer2/Swap_Button"), NodePath("Grid/M/container/xContainer3/Player_Guard"), NodePath("Grid/M/container/xContainer4/Inventory_Button"), NodePath("Grid/M/container/xContainer5/Escape_Button") ]
 
 [node name="Grid" type="GridContainer" parent="Batttle/Battle_Buttons"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 208.0
+margin_right = 258.0
 margin_bottom = 21.0
 
 [node name="M" type="MarginContainer" parent="Batttle/Battle_Buttons/Grid"]
-margin_right = 201.0
+margin_right = 251.0
 margin_bottom = 14.0
 
 [node name="container" type="HBoxContainer" parent="Batttle/Battle_Buttons/Grid/M"]
-margin_right = 201.0
+margin_right = 251.0
 margin_bottom = 14.0
 
 [node name="xContainer" type="VBoxContainer" parent="Batttle/Battle_Buttons/Grid/M/container"]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 14.0
 
 [node name="Attack_Button" parent="Batttle/Battle_Buttons/Grid/M/container/xContainer" instance=ExtResource( 13 )]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 14.0
 
 [node name="xContainer2" type="VBoxContainer" parent="Batttle/Battle_Buttons/Grid/M/container"]
-margin_left = 41.0
-margin_right = 78.0
+margin_left = 51.0
+margin_right = 98.0
 margin_bottom = 14.0
 
 [node name="Swap_Button" parent="Batttle/Battle_Buttons/Grid/M/container/xContainer2" instance=ExtResource( 13 )]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 14.0
 
 [node name="xContainer3" type="VBoxContainer" parent="Batttle/Battle_Buttons/Grid/M/container"]
-margin_left = 82.0
-margin_right = 119.0
+margin_left = 102.0
+margin_right = 149.0
 margin_bottom = 14.0
 
 [node name="Player_Guard" parent="Batttle/Battle_Buttons/Grid/M/container/xContainer3" instance=ExtResource( 13 )]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 14.0
 
 [node name="xContainer4" type="VBoxContainer" parent="Batttle/Battle_Buttons/Grid/M/container"]
-margin_left = 123.0
-margin_right = 160.0
+margin_left = 153.0
+margin_right = 200.0
 margin_bottom = 14.0
 
 [node name="Inventory_Button" parent="Batttle/Battle_Buttons/Grid/M/container/xContainer4" instance=ExtResource( 13 )]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 14.0
 
 [node name="xContainer5" type="VBoxContainer" parent="Batttle/Battle_Buttons/Grid/M/container"]
-margin_left = 164.0
-margin_right = 201.0
+margin_left = 204.0
+margin_right = 251.0
 margin_bottom = 14.0
 
 [node name="Escape_Button" parent="Batttle/Battle_Buttons/Grid/M/container/xContainer5" instance=ExtResource( 13 )]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 14.0
 
 [node name="Inventory" type="PanelContainer" parent="Batttle"]
@@ -202,7 +200,7 @@ margin_right = 37.0
 margin_bottom = 32.0
 
 [node name="container" type="VBoxContainer" parent="Batttle/Options_Menu/Grid/M"]
-margin_right = 37.0
+margin_right = 47.0
 margin_bottom = 32.0
 
 [node name="yes" parent="Batttle/Options_Menu/Grid/M/container" instance=ExtResource( 13 )]
