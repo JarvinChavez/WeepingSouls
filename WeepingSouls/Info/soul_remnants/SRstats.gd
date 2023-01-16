@@ -2,7 +2,6 @@ extends Resource
 
 class_name SRstats
 
-
 signal name_changed 
 signal level_changed
 signal hp_changed
@@ -29,7 +28,7 @@ enum Type1 {
 #funcs
 export(String) var name:String setget set_name
 export(Type1) var type
-export(Type1) var type2
+export(Type1) var type2 
 export(int) var level:int  setget set_level, get_level
 export(int) var exp_stat:int = 1
 export(int) var xp:int = 1 setget set_xp
@@ -45,11 +44,12 @@ export(int) var resistance:int = 1
 export(int) var speed:int = 1
 
 #about 
-export(bool) var wild:int
+export(bool) var wild
 export(Array, Resource) var EquippedMoves
 export(Dictionary) var Moveset
 export(PackedScene) var Texture
 export(Dictionary) var abilities 
+export(String, MULTILINE) var Desc
 
 
 
