@@ -1,27 +1,70 @@
-extends PanelContainer
+extends ColorRect
 
-onready var DialogueBox_ = find_node("Dialogue_Box")
-onready var tween_ = find_node("tween")
-onready var arrow_ = find_node("NEXT_arrow")
-onready var success = find_node("success_sound")
+var dialog
 
-func set_text(text, post_delay:float = 0.7) -> Tween:
-	DialogueBox_.percent_visible = 0
-	DialogueBox_.bbcode_text = str(text)
-	tween_.interpolate_property(DialogueBox_, "percent_visible", null, 1, 0.5)
-	tween_.interpolate_method(tween_, "nop", 0, 0, post_delay, 0, 0, 0.5)
-	return tween_.block()
+var phraseNum = 0
+var finished = false
 
-func set_text_for_confirm(text) -> Tween:
-	DialogueBox_.percent_visible = 0
-	DialogueBox_.bbcode_text = str(text)
-	tween_.interpolate_property(DialogueBox_, "percent_visible", null, 1, 0.5)
-	tween_.step_property(arrow_, "visible", false, true, 0.5)
-	tween_.interpolate_method(tween_, "nop", 0, 0, 999999999, 0, 0, 0.5)
-	tween_.connect("tween_all_completed", arrow_, "set_visible", [false], CONNECT_ONESHOT | CONNECT_REFERENCE_COUNTED)
-	tween_.connect("tween_all_completed", $Clicking_sound, "play", [], CONNECT_ONESHOT | CONNECT_REFERENCE_COUNTED)
-	return tween_.block()
+export var dialogPath = ""
+export(float) var textSpeed = 0.05
 
-func clear_text() -> void:
-	arrow_.visible = false
-	DialogueBox_.bbcode_text = ""
+onready var Text = $Dialogue_Box_texture/ColorRect/Text
+onready var Talking_Name = $Dialogue_Box_texture/ColorRect/Name
+onready var person_talking = $Dialogue_Box_texture/ColorRect/Person_Talking
+onready var diamond_anim = $Dialogue_Box_texture/ColorRect/Diamond_anim
+ 
+func _ready():
+	$Timer.wait_time = textSpeed
+	dialog = getDialog()
+	assert(dialog, "Dialog not found")
+	nextPhrase()
+ 
+func _process(_delta):
+	$Indicator.visible = finished
+	if Input.is_action_just_pressed("ui_accept"):
+		if finished:
+			nextPhrase()
+		else:
+			$Text.visible_characters = len($Text.text)
+ 
+func getDialog() -> Array:
+	var f = File.new()
+	assert(f.file_exists(dialogPath), "File path does not exist")
+	
+	f.open(dialogPath, File.READ)
+	var json = f.get_as_text()
+	
+	var output = parse_json(json)
+	
+	if typeof(output) == TYPE_ARRAY:
+		return output
+	else:
+		return []
+ 
+func nextPhrase() -> void:
+	if phraseNum >= len(dialog):
+		queue_free()
+		return
+	
+	finished = false
+	
+	$Name.bbcode_text = dialog[phraseNum]["Name"]
+	$Text.bbcode_text = dialog[phraseNum]["Text"]
+	
+	$Text.visible_characters = 0
+	
+#	var f = File.new()
+#	var img = dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
+#	if f.file_exists(img):
+#		$Portrait.texture = load(img)
+#	else: $Portrait.texture = null
+	
+	while $Text.visible_characters < len($Text.text):
+		$Text.visible_characters += 1
+		
+		$Timer.start()
+		yield($Timer, "timeout")
+	
+	finished = true
+	phraseNum += 1
+	return
