@@ -2,84 +2,7 @@
 
 [ext_resource path="res://assets/blue-square.svg.hi.png" type="Texture" id=1]
 [ext_resource path="res://Info/Npcs/Dialogue_list/Next_button_idle.tres" type="Animation" id=2]
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends CanvasLayer
-
-export var dialogPATH = \"\"
-export(float) var textspeed = 0.05
-
-var dialog
-
-var phraseNum = 0
-var finished = false
-
-
-onready var Text = $Dialogue_Box_texture/ColorRect/Text
-onready var Timer_ = $Dialogue_Box_texture/ColorRect/Timer
-onready var Talking_Name = $Dialogue_Box_texture/ColorRect/Name
-onready var person_talking = $Dialogue_Box_texture/ColorRect/Person_Talking
-onready var diamond_anim = $Dialogue_Box_texture/ColorRect/Diamond_anim
-
-export var dialogPath = \"\"
-export(float) var textSpeed = 0.05
- 
-func _ready():
-	Timer_.wait_time = textSpeed
-	dialog = getDialog()
-	assert(dialog, \"Dialog not found\")
-	nextPhrase()
- 
-func _process(_delta):
-	diamond_anim.visible = finished
-	if Input.is_action_just_pressed(\"ui_accept\"):
-		if finished:
-			nextPhrase()
-		else:
-			Text.visible_characters = len(Text.text)
- 
-func getDialog() -> Array:
-	var f = File.new()
-	assert(f.file_exists(dialogPath), \"File path does not exist\")
-	
-	f.open(dialogPath, File.READ)
-	var json = f.get_as_text()
-	
-	var output = parse_json(json)
-	
-	if typeof(output) == TYPE_ARRAY:
-		return output
-	else:
-		return []
- 
-func nextPhrase() -> void:
-	if phraseNum >= len(dialog):
-		queue_free()
-		return
-	
-	finished = false
-	
-	Talking_Name.bbcode_text = dialog[phraseNum][\"Name\"]
-	Text.bbcode_text = dialog[phraseNum][\"Text\"]
-	
-	Text.visible_characters = 0
-	
-	var f = File.new()
-	var img = dialog[phraseNum][\"Name\"] + dialog[phraseNum][\"Emotion\"] + \".png\"
-	if f.file_exists(img):
-		person_talking.texture = load(img)
-	else: person_talking.texture = null
-	
-	while Text.visible_characters < len(Text.text):
-		Text.visible_characters += 1
-		
-		Timer_.start()
-		yield(Timer_, \"timeout\")
-	
-	finished = true
-	phraseNum += 1
-	return
-"
+[ext_resource path="res://Info/Npcs/Dialogue.gd" type="Script" id=3]
 
 [sub_resource type="LargeTexture" id=5]
 
@@ -127,22 +50,24 @@ func _on_Sr_in_battle_visibility_changed():
 [sub_resource type="AudioStreamSample" id=2]
 
 [node name="Dialogue" type="CanvasLayer"]
-script = SubResource( 3 )
-dialogPATH = "res://Info/Npcs/Dialogue_list/Dialogue1.json"
 
 [node name="Dialogue_Box_texture" type="NinePatchRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 216.0
-margin_top = 1000.0
+margin_left = 152.0
+margin_top = 528.0
+margin_right = -64.0
+margin_bottom = -472.0
 
 [node name="ColorRect" type="ColorRect" parent="Dialogue_Box_texture"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -24.0
-margin_top = -304.0
-margin_right = -1024.0
-margin_bottom = -296.0
+margin_left = 24.0
+margin_top = -280.0
+margin_right = -768.0
+margin_bottom = -224.0
+script = ExtResource( 3 )
+dialogPath = "res://Info/Npcs/Dialogue_list/Dialoguetest.json"
 
 [node name="Name" type="RichTextLabel" parent="Dialogue_Box_texture/ColorRect"]
 modulate = Color( 0, 0, 0, 1 )
@@ -155,26 +80,27 @@ rect_scale = Vector2( 1.5, 1.5 )
 text = "Name"
 
 [node name="Text" type="RichTextLabel" parent="Dialogue_Box_texture/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 11.0
 margin_right = 685.0
 margin_bottom = 70.0
 
-[node name="Person_Talking" type="Sprite" parent="Dialogue_Box_texture/ColorRect"]
+[node name="Portrait" type="Sprite" parent="Dialogue_Box_texture/ColorRect"]
 position = Vector2( 608, -72 )
 scale = Vector2( 0.336111, 0.279511 )
 texture = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="Dialogue_Box_texture/ColorRect"]
 
-[node name="Diamond_anim" type="Polygon2D" parent="Dialogue_Box_texture/ColorRect"]
+[node name="Indicator" type="Polygon2D" parent="Dialogue_Box_texture/ColorRect"]
 visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 688, 56 )
 texture = SubResource( 5 )
 polygon = PoolVector2Array( 0, -8, -8, 8, 0, 16, 8, 8 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogue_Box_texture/ColorRect/Diamond_anim"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogue_Box_texture/ColorRect/Indicator"]
 autoplay = "Next_button_idle"
 anims/Next_button_idle = ExtResource( 2 )
 
