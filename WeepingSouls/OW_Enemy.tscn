@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Battle System/Opponent_info/Enemy_func.gd" type="Script" id=1]
 [ext_resource path="res://Info/Npcs/temp enemy.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/temp_assets/exclamationmark.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 311.002
@@ -19,6 +20,11 @@ radius = 518.078
 
 [node name="NPC" type="KinematicBody2D"]
 script = ExtResource( 1 )
+text = "we wh
+wee
+weee"
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
@@ -30,6 +36,15 @@ frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Noticed_Area"]
 shape = SubResource( 4 )
+
+[node name="spot" type="Sprite" parent="."]
+visible = false
+position = Vector2( -13.8445, 577.929 )
+rotation = -3.12597
+scale = Vector2( 0.155, 0.257254 )
+texture = ExtResource( 3 )
+
+[node name="spot_audio" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_shape_entered" from="Noticed_Area" to="." method="_on_NPC_body_entered"]
 [connection signal="body_shape_exited" from="Noticed_Area" to="." method="_on_NPC_body_exited"]

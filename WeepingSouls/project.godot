@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://temp_texture_pos.gd"
 }, {
+"base": "Resource",
+"class": "Items_resources",
+"language": "GDScript",
+"path": "res://Info/Items/Item_resources.gd"
+}, {
 "base": "Control",
 "class": "Menu",
 "language": "GDScript",
@@ -24,10 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://BattleSystem_Scripts/MoveStatistics.gd"
 }, {
-"base": "Node",
-"class": "NPCMechanics",
+"base": "KinematicBody2D",
+"class": "NPC_Mehanics",
 "language": "GDScript",
-"path": "res://Info/Npcs/NpcMechanics.gd"
+"path": "res://Battle System/Opponent_info/Enemy_func.gd"
 }, {
 "base": "Resource",
 "class": "N_PCStats",
@@ -51,9 +56,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CharBattleTexture": "",
+"Items_resources": "",
 "Menu": "",
 "MoveStats": "",
-"NPCMechanics": "",
+"NPC_Mehanics": "",
 "N_PCStats": "",
 "SRstats": "",
 "TextModel": "",

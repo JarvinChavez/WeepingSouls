@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Info/Items/Item_resources.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_Id = 1
+name = ""
+Description = ""
+item_effect = 0
+boost_amount = 1.0
+type_boosted = 12
+type_boost_amount = 1.0
+afflicted_status = 0
+health_manipulated = 0
+Consumed = false
+used = false
+is_disabled = false
+quantity = 0

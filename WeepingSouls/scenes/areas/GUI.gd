@@ -27,15 +27,15 @@ func _input(_event):
 			if menu_stack.size() != 0:
 				prev_menu = menu_stack.back()
 				prev_menu.hide()
-				menu_stack.clear()
+				menu_stack.pop_back()
+			current_menu = Utility_Menus
+			menu_stack.append(current_menu)
 			get_tree().get_root().set_disable_input(true)
 			Utility_Menus.show()
 			time.start()
-			tween.interpolate_property(Utility_Menus, "rect_global_position", Utility_Menus.rect_global_position, Vector2(0, Utility_Menus.rect_position.y), 1, tween.EASE_IN, tween.EASE_OUT, 0.5)
+			tween.interpolate_property(Utility_Menus, "rect_global_position", Utility_Menus.rect_global_position, Vector2(0, Utility_Menus.rect_position.y), 0.5, tween.EASE_IN, tween.EASE_OUT, 0.5)
 			tween.start()
 			yield(time, "timeout")
-			current_menu = Utility_Menus
-			menu_stack.append(current_menu)
 			get_tree().get_root().set_disable_input(false)
 			
 
@@ -44,19 +44,18 @@ func _input(_event):
 			if Input.is_action_just_pressed("Utility_Menu"):
 				get_tree().get_root().set_disable_input(true)
 				time.start()
-				tween.interpolate_property(Utility_Menus, "rect_global_position", Utility_Menus.rect_global_position, Vector2(-Utility_Menus.rect_size.x, Utility_Menus.rect_position.y), 1, tween.EASE_IN, tween.EASE_OUT, 0.5)
+				tween.interpolate_property(Utility_Menus, "rect_global_position", Utility_Menus.rect_global_position, Vector2(-Utility_Menus.rect_size.x, Utility_Menus.rect_position.y), 0.5, tween.EASE_IN, tween.EASE_OUT, 0.5)
 				tween.start()
 				yield(time, "timeout")
 				Utility_Menus.hide()
 				menu_stack.pop_back()
 				get_tree().get_root().set_disable_input(false)
-				print(menu_stack)
+
 
 
 
 func _on_Soul_Remnants_pressed():
-	prev_menu = menu_stack.back()
-	prev_menu.hide()
+	current_menu.hide()
 	menu_stack.pop_back()
 	current_menu = Soul_Remnants
 	menu_stack.append(current_menu)
@@ -88,7 +87,7 @@ func _on_Save_pressed():
 func _on_Close_pressed():
 	Close.disabled = true
 	time.start()
-	tween.interpolate_property(Utility_Menus, "rect_global_position", Utility_Menus.rect_global_position, Vector2(-Utility_Menus.rect_size.x, Utility_Menus.rect_position.y), 1, tween.EASE_IN, tween.EASE_OUT, 0.5)
+	tween.interpolate_property(Utility_Menus, "rect_global_position", Utility_Menus.rect_global_position, Vector2(-Utility_Menus.rect_size.x, Utility_Menus.rect_position.y), 0.5, tween.EASE_IN, tween.EASE_OUT, 0.5)
 	tween.start()
 	yield(time, "timeout")
 	Utility_Menus.hide()

@@ -15,7 +15,7 @@ enum Statuses {
 	frostbite,
 }
 
-enum Type1 {
+enum Type {
 	heat,
 	water,
 	symbiotic,
@@ -58,17 +58,13 @@ enum De_buff {
 	
 }
 
-enum MoveType {
-	attack,
-	Special
-}
 
 
 export(String) var Name
 export(int) var power = 1
 export(int) var accuracy = 1
-export(Type1) var type
+export(Type) var type
 export(Statuses) var statuses
-export(MoveType) var movetype
+export(int, "attack", "special") var movetype
 export(PackedScene) var fx 
 export(int) var Surge = 1
