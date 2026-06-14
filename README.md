@@ -1,16 +1,68 @@
 # Weeping Souls
-## Overview
-- Weeping Souls is an experimental game project developed in Godot as a learning exercise to explore:
-- Game development fundamentals
-- Programming with C# and GDScript
-- Gameplay logic, state management, and scripting
-- Working with the Godot engine (scenes, nodes, signals, project structure)
-- This project was created primarily as a hands-on learning environment rather than a commercial or fully polished game.
 
-## Project Status 
-> ⚠️ **Status: Abandoned / Prototype**
+**Weeping Souls** is a creature-battle RPG prototype built in **Godot** as a team learning project at the University of St. Thomas. It grew out of an earlier solo **Python/pygame** attempt called [**Something Will Work**](https://github.com/JarvinChavez/something-will-work).
 
-This project was not completed and is no longer under active development. It is preserved as:
-- A learning milestone
-- A technical prototype
-- A reference for early Godot + scripting experiments
+Explore an overworld, talk to NPCs, and fight using typed moves, items, and custom battle UI — all wired in GDScript with Godot scenes and resources.
+
+> **Status:** Prototype · not completed · preserved as a learning milestone
+
+---
+
+## Project lineage
+
+| Stage | Repo | Stack | Notes |
+|-------|------|-------|-------|
+| 1 · Solo prototype | [**something-will-work**](https://github.com/JarvinChavez/something-will-work) | Python · pygame | Menus + overworld stub + stat experiments |
+| 2 · Team rebuild | **Weeping Souls** (this repo) | Godot · GDScript | Battles, dialogue, moves, NPCs, assets |
+
+If you want to see where the idea started, start with Something Will Work. This repo is the Godot evolution.
+
+---
+
+## What's in the project
+
+Open the Godot project at **`WeepingSouls/project.godot`**.
+
+| Area | Contents |
+|------|----------|
+| `Battle System/` | Turn-based battle scenes, opponent logic, battle UI |
+| `BattleSystem_Scripts/` | Move stats, battle flow scripts |
+| `Info/` | Moves, items, NPC stats, player data, soul remnants |
+| `Info/Npcs/` | Dialogue system + JSON dialogue files |
+| `scenes/` | Menus, areas, characters |
+| `assets/` | Sprites and backgrounds |
+| `player/` | Player movement / interaction |
+
+**Implemented (partial):** main menu, battle encounters, move resources, NPC dialogue boxes, item resources, GUI work.
+
+**Not finished:** full game loop, balancing, polish, content completion.
+
+---
+
+## Run locally
+
+1. Install **[Godot 3.x](https://godotengine.org/download)** (project uses Godot 3 scene format).
+2. Open Godot → **Import** → select `WeepingSouls/project.godot`.
+3. Press **F5** (Play). Main scene: `scenes/Menu.tscn`.
+
+No separate build step required for local testing.
+
+---
+
+## Stack
+
+Godot 3 · GDScript · JSON (dialogue)
+
+---
+
+## Team
+
+Team Godot project · **Jarvin Chavez** contributed battle systems, scripting, and UI work.
+
+Related solo prototype: [**Something Will Work**](https://github.com/JarvinChavez/something-will-work)
+
+---
+
+## Author
+
+**Jarvin Chavez** · [GitHub](https://github.com/JarvinChavez)
